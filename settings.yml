@@ -1,6 +1,6 @@
 repository:
   description: description of the repo
-  private: false
+  private: true
 labels:
   include:
     - name: test1
