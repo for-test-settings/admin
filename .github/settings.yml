@@ -9,3 +9,6 @@ labels:
     - name: tes8787897987489798
       color: '#a2ee8f'
       description: test4
+    - name: '1'
+      color: '#a2e58f'
+      description: test4
