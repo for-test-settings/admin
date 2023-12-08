@@ -49,13 +49,20 @@ mergeable:
           regex: 'CHANGELOG.md'
           message: 'CHANGELOG.md with details must be present in every PR'
 
-  # Description of the PR must not be empty, must begin with a summary
-  # and contain a link to JIRA and must not include "DO NOT MERGE"
   - when: pull_request.*, pull_request_review.*
     name: 'Description check'
     validate:
       - do: description
         no_empty:
           enabled: true # Cannot be empty when true.
-          message: 'PR should have a proper summary description
-   
+          message: 'PR should have a proper summary description'
+        must_include:
+          regex: 'https://saritasa.atlassian.net/browse/[A-Z][A-Z0-9]+-\d+'
+          message: 'The description must contain a link to the JIRA task'
+        must_exclude:
+          regex: 'DO NOT MERGE'
+          regex_flag: 'i' # case-insensitive (it is a default, to disable use 'none')
+          message: 'The description should not contain "DO NOT MERGE"'
+        begins_with:
+          match: '### Summary'
+          message: 'PR Description should start with the title Summary'
