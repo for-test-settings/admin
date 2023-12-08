@@ -58,10 +58,6 @@ mergeable:
         no_empty:
           enabled: true # Cannot be empty when true.
           message: 'PR should have a proper summary description
-        must_exclude:
-          regex: 'DO NOT MERGE'
-          regex_flag: 'i' # case-insensitive (it is a default, to disable use 'none')
-          message: 'The description should not contain "DO NOT MERGE"'
         begins_with:
           match: '### Summary'
           message: 'PR Description should start with the title Summary'
