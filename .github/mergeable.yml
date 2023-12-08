@@ -58,6 +58,4 @@ mergeable:
         no_empty:
           enabled: true # Cannot be empty when true.
           message: 'PR should have a proper summary description
-        begins_with:
-          match: '### Summary'
-          message: 'PR Description should start with the title Summary'
+   
